@@ -1,0 +1,33 @@
+<div class="form-container">
+  <h2>Sign up</h2>
+
+  <form action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
+    <div>
+      <label for="username" required>Full name</label>
+      <input id="username" type="text" name="username">
+    </div>
+
+    <div>
+      <label for="profilePicUrl">Your picture</label>
+      <input type="file" name="profilePicUrl" id="upload">
+    </div>
+
+    <div>
+      <label for="email" required>Email</label>
+      <input id="email" type="email" name="email">
+    </div>
+
+    <div>
+      <label for="password" required>Password</label>
+      <input id="password" type="password" name="password">
+    </div>
+
+    {{#if errorMessage}}
+      <div class="error-message">{{errorMessage}}</div>
+    {{/if}}
+
+    <div>
+      <button>Create</button>
+    </div>
+  </form>
+</div>

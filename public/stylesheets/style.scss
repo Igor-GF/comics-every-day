@@ -1,0 +1,295 @@
+$main-grey: #2d293a;
+$orange: rgb(255, 162, 75);
+$font-stack: "Impact", sans-serif;
+$mobile: 768px;
+$tablet: 480px;
+
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 400;
+}
+
+body {
+  background-color: $main-grey;
+  font-family: $font-stack; 
+}
+
+p {
+  font-family: "arial", sans-serif;
+  margin: 30px, 0px;
+}
+
+nav {
+  background-color: $main-grey;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  padding: 20px;
+
+  ul {
+    display: flex;
+    list-style: none;
+  }
+
+  li {
+    padding: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    font-family: $font-stack;
+    transition: color 0.5s;
+    color: #ffffff;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  .title {
+    color: #ffffff;
+    font-size: 50px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+  overflow:auto;
+}
+
+.container-two {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 20px;
+
+  p {
+    text-align: left;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content:space-evenly;
+
+  p {
+    font-size: 15px;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-family: "arial", sans-serif;
+  color: $main-grey; 
+
+  &:hover {
+    color: rgb(70, 40, 225);
+  }
+}
+
+span {
+  font-family: $font-stack;
+}
+
+.comics-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 73%;
+}
+
+.comic-book-card{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  width: 240px;
+  height: 420px;;
+  font-size: 15px;
+  background-color: rgba(192, 192, 192, 0.7);
+  color: $main-grey;
+  border-radius: 3%;
+  padding: 10px;
+  margin: 10px 0;
+
+  article {
+    align-items: center;
+  }
+}
+
+.top.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.top-comics-container {
+  width: 200px;
+  border: 2px, solid, silver;
+  text-align: left;
+  color: silver;
+
+  p {
+    margin: 10px 0 0 0;
+  }
+}
+
+.top-readers-container {
+  margin-top: 20px;
+  width: 200px;
+  border-block: 2px, silver;
+  text-align: left;
+  color: silver;
+
+  p {
+    margin: 10px 0 0 0;
+  }
+}
+
+input {
+  font-family: "arial", sans-serif;
+  color: $main-grey;
+}
+
+button {
+  background-color: steelblue;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 15px;
+  transition: background-color 0.6s;
+
+  &:hover {
+    background-color: $orange;
+    color: $main-grey;
+  }
+}
+
+.info-message {
+  color: $orange;
+  font-family: "arial", sans-serif;
+  padding: 20px;
+}
+
+.error-message {
+  background-color: crimson;
+  color:#ffffff;
+  font-family: "arial", sans-serif;
+  margin: 8px 0px;
+  border: 0px;
+  padding: 5px;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  padding: 10px;
+  color: silver;
+
+  section {
+    display: flex;
+    align-content: space-between;
+    text-align: left;
+    background-color: rgba(192, 192, 192, 0.2);
+    margin: 10px;
+    padding: 10px;
+    height: 320px;
+    border-radius: 5px;
+  } 
+
+  p {
+    margin: 5px;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .user-read-list-container {
+    height: fit-content;
+    width: 220px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .user-wish-list-container {
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+    border-radius: 5px;
+    width: 220px;
+    padding: 10px;
+  }
+}
+
+.comicbook-main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.comic-book-details {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-content:center;
+  padding: 10px;
+  width: 600px;
+  height:fit-content;
+  color: silver;
+  background-color: rgba(192, 192, 192, 0.2);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-content: flex-start;
+    text-align: left;
+    padding: 20px;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  background-color: rgba(192, 192, 192, 0.7);
+  border-radius: 5px;
+  width: 450px;
+  height: fit-content;
+  padding: 20px;
+  text-align: center;
+
+  label {
+    margin: 10px;
+  }
+
+  p {
+    margin: 10px, 0px;
+  }
+}
+
+.review-form-container {
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+  }
+}

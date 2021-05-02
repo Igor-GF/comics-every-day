@@ -1,0 +1,54 @@
+<div class="comicbook-main-container">
+  <section class="comic-book-details">
+    <div class="img-block">
+      <img src="{{comicBook.coverUrl}}">
+    </div>
+    <div>
+      {{#if messageAddedWishList}}
+        <p class="info-message">{{messageAddedWishList}}</p>
+      {{/if}}
+
+      <h1>{{comicBook.title}}</h1>
+      <h3>Writer: {{comicBook.writer}}</h3>
+      <p>Publisher: {{comicBook.publisher}}</p>
+      <p>Rate: {{comicBook.rates.length}}</p>
+      
+      <form action="/comics/{{comicBook.id}}/add-wish-list" method="POST">
+        <button type="submit">Add to my wish list</button>
+      </form>
+      <a href="/comics/{{comicBook.id}}/edit"><button>Edit</button></a>
+      <form action="/comics/{{comicBook.id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </section>
+
+  {{#if message}}
+  <p class="error-message">{{message}}</p>
+  {{/if}}
+
+  {{#if userReviewedThis}}
+  <section class="review-form-container">
+    <p class="info-message">You've rated this comic book!</p>
+  {{else}}
+    <form action="/comics/{{comicBook.id}}/review" method="POST">
+    <div>
+      <select id="rates" name="rate">
+        <option disabled selected>choose rating</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <textarea name="comment" rows="5" cols="30">Comment here...</textarea> 
+    </div>
+    <div>
+      <input type="submit">
+    </div>
+    </form>
+  </section>
+  {{/if}}
+</div>

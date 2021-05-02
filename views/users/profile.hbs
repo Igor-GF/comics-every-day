@@ -1,0 +1,38 @@
+<div class="user-container">
+  {{#if message}}
+    {{#each message}}
+    <h4 class="info-message">{{this}}</h4>
+    {{/each}}
+    {{/if}}
+
+  <section class="user-profile-container">
+    
+    <div>
+      <img src="{{user.profilePicUrl}}">
+    </div>
+
+    <div class="profile-info">
+      <h1>Hello {{user.username}}</h1>
+      <p>Email: {{user.email}}</p>
+      <p>You have read <span>{{user.readComics.length}}</span> comic books so far.</p>
+    </div> 
+    <br>
+    <form action="/profile/{{user.id}}/delete" method="POST">
+      <button type="submit">Delete profile</button>
+    </form> 
+  </section>
+
+  <section class="user-read-list-container">
+    <h3>Comics I've read</h3>
+    {{#each user.readComics}}
+      <p>{{this.title}}</p>
+    {{/each}}
+  </section>
+
+  <section class="user-wish-list-container">
+    <h3>My wish list</h3>
+    {{#each user.wishedComics}}
+      <a href="/comics/{{this}}">Comic book title</a>
+    {{/each}}
+  </section>
+</div>

@@ -1,0 +1,29 @@
+<h2>Editing</h2>
+
+<form action="/comics/{{comicBook.id}}/edit" method="POST" id="form-container" enctype="multipart/form-data">
+ <div>
+  <label for="title">Title</label>
+  <input type="text" name="title" value="{{comicBook.title}}" required>
+ </div>
+
+ <div>
+  <label for="writer">Writer</label>
+  <input type="text" name="writer" value="{{comicBook.writer}}" required>
+ </div>
+
+ <div>
+  <label for="publisher">Publisher</label>
+  <input type="text" name="publisher" value="{{comicBook.publisher}}">
+ </div>
+
+ <div>
+  <label for="cover">Cover</label>
+  <input type="file" name="coverUrl" id="upload">
+  <input type="text" hidden value="{{comicBook.coverUrl}}" name="existingCover">
+ </div>
+
+  <div>
+  <button>Save changes</button>
+ </div>
+ 
+</form>

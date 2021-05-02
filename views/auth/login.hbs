@@ -1,0 +1,27 @@
+<div class="form-container">
+   <h2>Login</h2>
+
+   <form action="/login" method="POST" id="form-container">
+      <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" required>
+      </div>
+
+      <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" required>
+      </div>
+
+      {{#if errorMessage}}
+      <div class="error-message">{{errorMessage}}</div>
+      {{/if}}
+
+      <div>
+         <button>Create account</button>
+         <p class="account-message">
+            Sign Up?
+            <a href="/signup">Sign Up</a>
+         </p>
+      </div>      
+   </form>
+</div>

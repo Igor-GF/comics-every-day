@@ -1,0 +1,39 @@
+<div class="main-container">
+  
+  <section class="comics-list-container">
+    
+    {{#each comics}}
+    <article class="comic-book-card">
+      <img src="{{this.coverUrl}}">
+      <h3>{{this.title}}</h3>
+      <h4>Rate {{this.rates.length}}</h4>
+      <a href="/comics/{{this.id}}">Details</a>
+    </article>
+    {{/each}}
+  </section>
+
+  <section class="top.container">
+    <div class="top-comics-container">
+      {{#if message}}
+        <p class="error-message">{{message}}</p>
+      {{/if}}
+
+      <h3>Top Comic Books</h3>
+      {{#each user.readComics}}
+        <p>{{this}}</p>
+      {{/each}}
+        <a href="/comics/{{this}}">{{this}}</a>
+    </div>
+
+    <div class="top-readers-container">
+      <h3>Top Readers</h3>
+      {{#each user.wishedComics}}
+        <a href="/comics/{{this}}">{{this}}</a>
+      {{/each}}
+      <p>Johannes Vermeer</p>
+      <p>Piet Mondrian</p>
+      <p>Judith Leyster</p>
+    </div>
+  </section>
+
+</div>

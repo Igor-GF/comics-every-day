@@ -1,0 +1,35 @@
+<div class="form-container">
+
+  <h2>Add a Comic Book</h2>
+  <p>Please, fill up with as much information as possible!</p>
+
+  <form action="/add-comic-book" method="POST" id="form-container" enctype="multipart/form-data">
+    <div>
+      <label for="title">Title</label>
+      <input type="text" name="title" required>
+    </div>
+
+    <div>
+      <label for="writer">Writer</label>
+      <input type="text" name="writer" required>
+    </div>
+
+    <div>
+      <label for="publisher">Publisher</label>
+      <input type="text" name="publisher">
+    </div>
+
+    <div>
+      <label for="cover">Cover</label>
+      <input type="file" name="coverUrl" id="upload">
+    </div>
+
+    {{#if messageAddComics}}
+    <div class="error-message">{{messageAddComics}}</div>
+    {{/if}}
+
+      <div>
+      <button>Add</button>
+    </div>
+   </form>
+</div>
