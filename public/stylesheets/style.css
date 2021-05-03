@@ -55,7 +55,10 @@ nav {
 
 .main-container {
   display: flex;
-  justify-content: space-evenly; }
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start; }
   .main-container p {
     font-size: 15px; }
 
